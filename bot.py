@@ -1,11 +1,9 @@
 import asyncio
 import logging
-import os
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command
 from aiogram.types import Message, CallbackQuery, LabeledPrice, PreCheckoutQuery
 from aiogram.utils.keyboard import InlineKeyboardBuilder
-from aiogram.client.session.aiohttp import AiohttpSession
 
 # --- НАСТРОЙКИ ---
 BOT_TOKEN = "9129925793:AAElP5CdQmQFIChGsaWa7hK6PWVGo0CKUm8"
@@ -19,16 +17,8 @@ PRODUCTS = {
 
 logging.basicConfig(level=logging.INFO)
 
-# --- НАСТРОЙКА ПРОКСИ ДЛЯ PYTHONANYWHERE (БЛОК 3) ---
-# Бесплатный тариф требует использовать этот прокси для выхода в интернет
-os.environ['http_proxy'] = 'http://proxy.server:3128'
-os.environ['https_proxy'] = 'http://proxy.server:3128'
-
-# Создаем сессию с прокси и передаем её боту
-session = AiohttpSession(proxy='http://proxy.server:3128')
-bot = Bot(token=BOT_TOKEN, session=session)
-# ---------------------------------------------------
-
+# Создаем бота (теперь напрямую, без прокси)
+bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
 # --- КЛАВИАТУРА С ТОВАРАМИ ---
