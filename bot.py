@@ -6,7 +6,7 @@ from aiogram.types import Message, CallbackQuery, LabeledPrice, PreCheckoutQuery
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 # --- НАСТРОЙКИ ---
-BOT_TOKEN = "9129925793:AAElP5CdQmQFIChGsaWa7hK6PWVGo0CKUm8"
+BOT_TOKEN = "9129925793:AAEF46gzIih2RDjDBbJj7kRoPpLqkgro7Z0"
 PROVIDER_TOKEN = "381764678:TEST:197340"
 
 # Товары: название, описание и цена в КОПЕЙКАХ (не в рублях!)
